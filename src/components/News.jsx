@@ -19,7 +19,8 @@ export default function News() {
       {
         news.slice(0,mainarticles).map((content)=>(
           <>
-          <div className="flex justify-start bg-slate-400 mt-5 rounded-xl">
+         <a href={content.url} target='blank'>
+         <div className="flex justify-start bg-slate-400 mt-5 rounded-xl">
           <div className="flex-col justify-start gap-20">
           <div className="">
             <img className='rounded-xl' src={content.urlToImage} alt="" />
@@ -30,6 +31,7 @@ export default function News() {
           </div>
           </div>
           </div>
+         </a>
           </>
         ))
       }
