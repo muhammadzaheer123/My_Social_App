@@ -43,7 +43,7 @@ export async function POST(req) {
       'svix-signature': svix_signature,
     });
   } catch (err) {
-    console.error('Error verifying webhook:', err);
+    console.error('Error verifying webhoook:', err);
     return new Response('Error occured', {
       status: 400,
     });
