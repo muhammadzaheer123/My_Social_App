@@ -6,7 +6,7 @@ export const ConnectBase = ()=>{
     mongoose.set("strictQuery",true)
     
     if (initialized) {
-        console.log(`Data Base Already Connected`)
+        console.log(`Data Base Alreadyy Connected`)
         return;
     }
 
