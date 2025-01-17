@@ -1,5 +1,5 @@
 import localFont from "next/font/local";
-import "../globals.css";
+import "../../app/globals.css";
 import LeftSidebar from "@/components/LeftSidebar";
 import RightSidebar from "@/components/RightSidebar";
 import { ClerkLoaded, ClerkLoading, ClerkProvider } from "@clerk/nextjs";
