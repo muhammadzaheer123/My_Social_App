@@ -1,46 +1,3 @@
-// import React from 'react'
-// import {
-//   ClerkProvider,
-//   SignInButton,
-//   SignOutButton,
-//   SignUpButton,
-//   SignedIn,
-//   SignedOut,
-//   UserButton
-// } from '@clerk/nextjs'
-// import MiniProfile from './MiniProfile'
-
-// export default function LeftSidebar() {
-//   return (
-//     <>
-//       <ClerkProvider>
-//         <div className='flex-col justify-center'>
-//           <SignedOut>
-//             <SignInButton />
-//           </SignedOut>
-
-//           <SignedIn>
-//           <div className='flex-col justify-center'>
-//             <MiniProfile/>
-//             <SignOutButton/>
-//             </div>
-//           </SignedIn>
-
-//         </div>
-//       </ClerkProvider>
-//     </>
-//   )
-// }
-
-
-
-
-
-
-
-
-
-
 import Link from 'next/link'
 import React from 'react'
 import { FaTwitter } from "react-icons/fa6";
@@ -76,3 +33,51 @@ export default function LeftSidebar() {
     </div>
   )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React from 'react'
+// import {
+//   ClerkProvider,
+//   SignInButton,
+//   SignOutButton,
+//   SignUpButton,
+//   SignedIn,
+//   SignedOut,
+//   UserButton
+// } from '@clerk/nextjs'
+// import MiniProfile from './MiniProfile'
+
+// export default function LeftSidebar() {
+//   return (
+//     <>
+//       <ClerkProvider>
+//         <div className='flex-col justify-center'>
+//           <SignedOut>
+//             <SignInButton />
+//           </SignedOut>
+
+//           <SignedIn>
+//           <div className='flex-col justify-center'>
+//             <MiniProfile/>
+//             <SignOutButton/>
+//             </div>
+//           </SignedIn>
+
+//         </div>
+//       </ClerkProvider>
+//     </>
+//   )
+// }
