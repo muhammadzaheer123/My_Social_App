@@ -35,6 +35,6 @@ const USERSCHEMA = mongoose.Schema({
     }
 })
 
-const User = new mongoose.model("SocialApp",USERSCHEMA)
+const User = new mongoose.model("user",USERSCHEMA)
 
 export default User

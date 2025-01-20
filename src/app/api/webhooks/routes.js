@@ -1,7 +1,7 @@
 import { Webhook } from 'svix';
 import { headers } from 'next/headers';
 import { clerkClient } from '@clerk/nextjs/server';
-import { createAndUpdate } from '../../../Library/Actions/user';
+import { CreateAndUpdate } from '../../../Library/Actions/user';
 
 export async function POST(req) {
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the endpoint
@@ -60,7 +60,7 @@ export async function POST(req) {
     const { id, first_name, last_name, image_url, email_addresses, username } =
       evt?.data;
     try {
-      const user = await createAndUpdate(
+      const user = await CreateAndUpdate(
         id,
         first_name,
         last_name,
@@ -87,7 +87,7 @@ export async function POST(req) {
     }
   }
 
-console.log("helloe")
+console.log("Asalam O alikum")
 
   return new Response('', { status: 200 });
 }

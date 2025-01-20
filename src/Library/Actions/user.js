@@ -1,7 +1,7 @@
 import User from "../model/user";
 import { ConnectBase } from "../mongoose/ConnectDB";
 
-export const createAndUpdate = async(
+export const CreateAndUpdate = async(
     id,
     first_name,
     last_name,
