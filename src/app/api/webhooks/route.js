@@ -89,5 +89,5 @@ export async function POST(req) {
 
 console.log("Asalam O alikum")
 
-  return new Response('', { status: 200 });
+  return new Response('Hello', { status: 200 });
 }
