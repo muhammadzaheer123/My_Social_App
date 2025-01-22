@@ -1,7 +1,7 @@
 import { Webhook } from 'svix';
 import { headers } from 'next/headers';
 import { clerkClient } from '@clerk/nextjs/server';
-import { createOrUpdateUser} from '../../../Library/Actions/user';
+import { CreateAndUpdate } from '../../../Library/Actions/user';
 
 export async function POST(req) {
     const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
@@ -57,7 +57,7 @@ export async function POST(req) {
                 return new Response('Invalid user data', { status: 400 });
             }
 
-            const user = await createOrUpdateUser(id, first_name, last_name, image_url, email_addresses, username);
+            const user = await CreateAndUpdate(id, first_name, last_name, image_url, email_addresses, username);
 
             if (user && eventType === 'user.created') {
                 try {
