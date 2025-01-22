@@ -12,7 +12,7 @@ export const ConnectBase = ()=>{
 
     try {
         mongoose.connect(process.env.MONGO_URL,{
-            dbName:"Social App",
+            dbName:"OLD_SOCIAL_APP",
             usenewurlparser:true,
             useunifiedtopology:true,
         })
