@@ -68,7 +68,7 @@ export async function POST(req) {
                     console.error('Error updating user metadata:', err.message);
                 }
             }
-        } 
+        }
     } catch (err) {
         console.error(`Error handling webhook event (${eventType}):`, err.message);
         return new Response('Error processing webhook', { status: 500 });
