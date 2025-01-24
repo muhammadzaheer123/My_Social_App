@@ -1,13 +1,13 @@
 import { Webhook } from 'svix';
 import { headers } from 'next/headers';
 import { clerkClient } from '@clerk/nextjs/server';
-import { CreateAndUpdate } from '../../../Library/Actions/user';
+import { CreateAndUpdate} from '../../../Library/Actions/user';
 
 export async function POST(req) {
     const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
 
     if (!WEBHOOK_SECRET) {
-        console.error('WEBHOOK_SECRET is not defined in the environment variables..');
+        console.error('WEBHOOK_SECRET is not defined in the environment variables.');
         return new Response('Server configuration error', { status: 500 });
     }
 
@@ -68,7 +68,7 @@ export async function POST(req) {
                     console.error('Error updating user metadata:', err.message);
                 }
             }
-        }
+        } 
     } catch (err) {
         console.error(`Error handling webhook event (${eventType}):`, err.message);
         return new Response('Error processing webhook', { status: 500 });
