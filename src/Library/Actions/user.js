@@ -25,6 +25,6 @@ export const CreateAndUpdate = async(
         )
         return user
     } catch (error) {
-        console.log(`Error in createOrUpdateUSer: ${error}`)    
+        console.log(`Error In createOrUpdateUSer: ${error}`)    
     }   
 }
