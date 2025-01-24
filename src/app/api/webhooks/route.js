@@ -7,7 +7,7 @@ export async function POST(req) {
     const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
 
     if (!WEBHOOK_SECRET) {
-        console.error('WEBHOOK_SECRET is not defined in the environment variables.');
+        console.error('WEBHOOK_SECRET is not defined in the environment variables..');
         return new Response('Server configuration error', { status: 500 });
     }
 
