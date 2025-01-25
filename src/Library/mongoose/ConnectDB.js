@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 let initialized = false;
 
-export const ConnectBase = ()=>{
+export const connectDB = ()=>{
     mongoose.set("strictQuery",true)
     
     if (initialized) {

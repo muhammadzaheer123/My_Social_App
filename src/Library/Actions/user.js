@@ -1,30 +1,40 @@
-import User from "../model/user";
-import { ConnectBase } from "../mongoose/ConnectDB";
+import User from '../model/user';
+import {connectDB}  from '../mongoose/ConnectDB';
 
-export const CreateAndUpdate = async(
-    id,
-    first_name,
-    last_name,
-    image_url,
-    username,
-    email_addresses
-)=>{
-    try {
-        await ConnectBase();
-        const user = User.findOneAndUpdate(
-            {clerkID:id},{
-                $set:{
-                    email:email_addresses[0].email_address,
-                    firstname:first_name,
-                    lastname:last_name,
-                    username:username,
-                    avatar:image_url             
-                }
-            },
-            {new:true,upsert:true}
-        )
-        return user
-    } catch (error) {
-        console.log(`Error In createOrUpdateUSer: ${error}`)    
-    }   
-}
+export const createOrUpdateUser = async (
+  id,
+  first_name,
+  last_name,
+  image_url,
+  email_addresses,
+  username
+) => {
+  try {
+    await connectDB();
+    const user = await User.findOneAndUpdate(
+      { clerkId: id },
+      {
+        $set: {
+          firstName: first_name,
+          lastName: last_name,
+          avatar: image_url,
+          email: email_addresses[0].email_address,
+          username,
+        },
+      },
+      { new: true, upsert: true }
+    );
+    return user;
+  } catch (error) {
+    console.log('Error creating or updating user:', error);
+  }
+};
+
+export const deleteUser = async (id) => {
+  try {
+    await connect();
+    await User.findOneAndDelete({ clerkId: id });
+  } catch (error) {
+    console.log('Error deleting user:', error);
+  }
+};
