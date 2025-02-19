@@ -7,7 +7,7 @@ export async function POSTT (req) {
     try {
         await connectDB();
         const DATA = await req.json();
-        if (!user || user.publicMetadata.userMongoId !== DATA.userMongoId) {
+        if (!user || user.publicMetadata.userMongoId ==! DATA.userMongoId) {
             return new Response ("unuthorized",{status:401})
         }
         const newPost = await POST.create({
