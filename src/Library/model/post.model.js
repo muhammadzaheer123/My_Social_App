@@ -49,7 +49,9 @@ const POSTSCHEMA = new mongoose.Schema({
         }
     },
     likes: {
-        type: [{ like, String }],
+        like:{
+            type:String
+        },
         user: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "User",
