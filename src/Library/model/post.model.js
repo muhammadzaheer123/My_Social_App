@@ -26,7 +26,9 @@ const POSTSCHEMA = new mongoose.Schema({
         required: true
     },
     comments: {
-        type: [{ comment, String }],
+        comment:{
+            type:String
+        },
         user: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "User",
