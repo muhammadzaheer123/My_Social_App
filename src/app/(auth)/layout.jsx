@@ -23,30 +23,30 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-   <ClerkProvider>
-     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-         <ClerkLoading>
-        <Loder/>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <ClerkLoading>
+            <Loder />
 
-        </ClerkLoading>
-        <ClerkLoaded>
-        <div className="h-screen flex justify-between p-3">
-          <div className="font-sans w-[25%] text-xl font-bold border-r-4">
-            <LeftSidebar/>
-          </div>
-          <div className="font-mono font-semibold flex-1 w-[50%] border-r-4">
-            {children}
-          </div>
-          <div className="w-[25%] p-2">
-            <RightSidebar/>
-          </div>
-        </div>
-        </ClerkLoaded>
-      </body>
-    </html>
-   </ClerkProvider>
+          </ClerkLoading>
+          <ClerkLoaded>
+            <div className="h-screen flex justify-between p-3">
+              <div className="font-sans w-[25%] text-xl font-bold border-r-4">
+                <LeftSidebar />
+              </div>
+              <div className="font-mono font-semibold flex-1 w-[50%] border-r-4">
+                {children}
+              </div>
+              <div className="w-[25%] p-2">
+                <RightSidebar />
+              </div>
+            </div>
+          </ClerkLoaded>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

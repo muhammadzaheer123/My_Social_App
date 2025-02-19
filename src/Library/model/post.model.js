@@ -1,4 +1,4 @@
-import mongoose, { Types } from "mongoose";
+import mongoose from "mongoose";
 
 const POSTSCHEMA = new mongoose.Schema({
     text: {
@@ -12,6 +12,10 @@ const POSTSCHEMA = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: User,
         required: true
+    },
+    name:{
+        type:String,
+        required:true
     },
     username: {
         type: String,
