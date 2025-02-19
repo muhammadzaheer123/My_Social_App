@@ -10,7 +10,7 @@ const POSTSCHEMA = new mongoose.Schema({
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: User,
+        ref: "User",
         required: true
     },
     name:{
@@ -29,7 +29,7 @@ const POSTSCHEMA = new mongoose.Schema({
         type: [{ comment, String }],
         user: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: User,
+            ref: "User",
             required: true
         },
         name: {
@@ -50,7 +50,7 @@ const POSTSCHEMA = new mongoose.Schema({
         type: [{ like, String }],
         user: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: User,
+            ref: "User",
             required: true
         },
         name: {
