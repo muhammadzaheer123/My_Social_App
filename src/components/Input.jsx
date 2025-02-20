@@ -97,16 +97,15 @@ export default function Input() {
       setImageUpload(result.info.secure_url)
     }
   }
-  const PostUploadImage = async()=>{
+  const PostUploadImage = async () => {
     setPostLoading(true)
-    alert("HELLO")
 
-    const response = await fetch("/api/post/create",{
-      method:"POST",
-      headers:{
+    const response = await fetch("/api/post/create", {
+      method: "POST",
+      headers: {
         "Content-Type": "application/json"
       },
-      body:JSON.stringify({
+      body: JSON.stringify({
         userMongoId: user.publicMetadata.userMongoId,
         name: user.fullName,
         username: user.username,
@@ -140,8 +139,10 @@ export default function Input() {
               </CldUploadWidget>
             </div>
             <div className="text-black font-serif text-[15px]">
-              <button onClick={PostUploadImage} className='w-[100px] h-[30px] rounded-md bg-purple-600 text-white'>
-                Post
+              <button
+                onClick={PostUploadImage}
+                disabled={Input.trim() === "" || PostLoading} className='w-[100px] h-[30px] rounded-md bg-purple-600 text-white'>
+                {PostLoading ? "Posting..." : "Post"}
               </button>
             </div>
           </div>
