@@ -99,6 +99,7 @@ export default function Input() {
   }
   const PostUploadImage = async()=>{
     setPostLoading(true)
+    alert("HELLO")
 
     const response = await fetch("/api/post/create",{
       method:"POST",
