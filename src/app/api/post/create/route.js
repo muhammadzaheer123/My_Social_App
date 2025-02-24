@@ -1,8 +1,8 @@
-import POST from "../../../../Library/model/post.model"
+import Post from "../../../../Library/model/post.model"
 import {connectDB} from "../../../../Library/mongoose/ConnectDB"
 import {currentUser} from "@clerk/nextjs/server"
  
-export async function POSTT (req) {
+export async function POST (req) {
     const user = await currentUser(req);
     try {
         await connectDB();
@@ -10,7 +10,7 @@ export async function POSTT (req) {
         if (!user || user.publicMetadata.userMongoId ==! DATA.userMongoId) {
             return new Response ("unuthorized",{status:401})
         }
-        const newPost = await POST.create({
+        const newPost = await Post.create({
             user:DATA.userMongoId,
             name:DATA.name,
             username:DATA.username,

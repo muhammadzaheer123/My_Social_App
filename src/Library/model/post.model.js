@@ -1,81 +1,46 @@
-import mongoose from "mongoose";
+import mongoose from "mongoose"
 
-const POSTSCHEMA = new mongoose.Schema({
+const POSTSchema = new mongoose.Schema({
     text: {
         type: String,
         required: true
     },
     image: {
-        type: String
+        type: String,
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "User",
-        required: true
+        ref: 'User',
     },
-    name:{
-        type:String,
-        required:true
+    name: {
+        type: String,
+        required: true
     },
     username: {
         type: String,
         required: true
     },
-    profileimage: {
+    profileImg: {
         type: String,
         required: true
     },
-    comments: {
-        comment:{
-            type:String
-        },
-        user: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User",
-            required: true
-        },
-        name: {
-            type: String,
-        },
-        username: {
-            type: String
-        },
-        profileimage: {
-            type: String
-        },
-        createdAt: {
-            type: String,
-            default: Date.now()
-        }
-    },
     likes: {
-        like:{
-            type:String
-        },
-        user: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User",
-            required: true
-        },
-        name: {
-            type: String,
-        },
-        username: {
-            type: String
-        },
-        profileimage: {
-            type: String
-        },
-        createdAt: {
-            type: String,
-            default: Date.now()
-        }
+        type: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+        default: []
     },
+    comments: {
+        type: [{
+            comment: String,
+            user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+            name: String,
+            username: String,
+            profileImg: String,
+            createdAt: { type: Date, default: Date.now() },
+        }],
+        default: []
+    }
+}, { timestamps: true });
 
-},
-    { timestamps: true }
-);
-
-const POST = mongoose.models.post || mongoose.model("post",POSTSCHEMA)
+const POST = mongoose.models.Post || mongoose.model('Post', POSTSchema);
 
 export default POST;
