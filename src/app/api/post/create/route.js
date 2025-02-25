@@ -4,9 +4,11 @@ import {currentUser} from "@clerk/nextjs/server"
  
 export async function POST (req) {
     const user = await currentUser(req);
+
     try {
         await connectDB();
         const DATA = await req.json();
+        console.log("api Data =======>" + DATA)
         if (!user || user.publicMetadata.userMongoId !== DATA.userMongoId) {
             return new Response ("unuthorized",{status:401})
         }

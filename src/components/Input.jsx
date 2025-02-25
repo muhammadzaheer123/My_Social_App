@@ -97,6 +97,8 @@ export default function Input() {
       setImageUpload(result.info.secure_url)
     }
   }
+  console.log("User mongoDb id=========>" + user.publicMetadata.userMongoId)
+  
   const PostUploadImage = async () => {
     setPostLoading(true)
 
