@@ -21,7 +21,7 @@ const POSTSCHEMA = new mongoose.Schema({
         type: String,
         required: true
     },
-    profileimage: {
+    profileImg: {
         type: String,
         required: true
     },

@@ -17,7 +17,7 @@ export async function POST (req) {
             name:DATA.name,
             username:DATA.username,
             text:DATA.text,
-            profileimage:DATA.profileimage,
+            profileImg:DATA.profileImg,
             image:DATA.image
         })
         await newPost.save();
