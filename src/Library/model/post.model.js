@@ -10,7 +10,7 @@ const POSTSCHEMA = new mongoose.Schema({
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "users",
+        ref: "User",
         
     },
     name:{
@@ -55,7 +55,6 @@ const POSTSCHEMA = new mongoose.Schema({
         user: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "User",
-            required: true
         },
         name: {
             type: String,

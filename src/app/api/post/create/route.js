@@ -22,12 +22,13 @@ export async function Post (req) {
         })
         await newPost.save();
         return new Response(JSON.stringify(newPost),{
-            status:201
+            status:201,
         });
     } catch (error) {
         console.log(error)
         return new Response("Internal Server Error",{
-            status:500
-        });
+            status:500,
+            
+        },error.message);
     };
 }
