@@ -98,7 +98,7 @@ export default function Input() {
     }
   }
   console.log("User mongoDb id=========>" + user.publicMetadata.userMongoId)
-  
+
   const PostUploadImage = async () => {
     setPostLoading(true)
 
@@ -126,7 +126,9 @@ export default function Input() {
       <div className="w-[100%] h-[100%] flex justify-center">
         <div className="w-[100%] h-[100%] flex-col justify-center p-3 bg-slate-50">
           <div className="w-[100%] h-[100%] flex justify-center">
-            <textarea className='w-[100%] h-[100%] outline-none rounded-md pl-2 pt-1 text-black text-[12px] border-4 focus:border-4 focus:border-black' rows={2} name="" id="" placeholder='Enter Your Content'></textarea>
+            <textarea className='w-[100%] h-[100%] outline-none rounded-md pl-2 pt-1 text-black text-[12px] border-4 focus:border-4 focus:border-black' rows={2} name="" id="" onChange={(e)=>{
+              setInput(e.target.value)
+            }} placeholder='Enter Your Content'></textarea>
           </div>
           <div className="w-[100%] h-[100%] flex justify-between mt-2 p-2">
             <div className="text-black font-serif text-[13px]">
