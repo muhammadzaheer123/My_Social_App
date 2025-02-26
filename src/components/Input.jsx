@@ -89,8 +89,6 @@ export default function Input() {
   const [Input, setInput] = useState("");
   const [PostLoading, setPostLoading] = useState(false);
 
-  let INPUT = document.getElementById("Input").value = ""
-
   if (!user || !isSignedIn || !isLoaded) {
     return null;
   }
@@ -103,7 +101,7 @@ export default function Input() {
 
   const PostUploadImage = async () => {
     setPostLoading(true)
-    Input
+    let INPUT = document.getElementById("Input").value = ""
 
     const response = await fetch("/api/post/create", {
       method: "POST",
@@ -146,7 +144,7 @@ export default function Input() {
               </CldUploadWidget>
             </div>
             <div className="text-black font-serif text-[15px]">
-              <button onClick={PostUploadImage} className='w-[100px] h-[30px] rounded-md bg-purple-600 text-white'>
+              <button id='Input' onClick={PostUploadImage} className='w-[100px] h-[30px] rounded-md bg-purple-600 text-white'>
                 post
               </button>
             </div>
