@@ -89,6 +89,8 @@ export default function Input() {
   const [Input, setInput] = useState("");
   const [PostLoading, setPostLoading] = useState(false);
 
+  let INPUT = document.getElementById("Input").value = ""
+
   if (!user || !isSignedIn || !isLoaded) {
     return null;
   }
@@ -101,6 +103,7 @@ export default function Input() {
 
   const PostUploadImage = async () => {
     setPostLoading(true)
+    Input
 
     const response = await fetch("/api/post/create", {
       method: "POST",
