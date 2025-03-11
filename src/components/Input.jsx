@@ -101,7 +101,6 @@ export default function Input() {
 
   const PostUploadImage = async () => {
     setPostLoading(true)
-    let INPUT = document.getElementById("Input").value = ""
 
     const response = await fetch("/api/post/create", {
       method: "POST",
@@ -127,7 +126,7 @@ export default function Input() {
       <div className="w-[100%] h-[100%] flex justify-center">
         <div className="w-[100%] h-[100%] flex-col justify-center p-3 bg-slate-50">
           <div className="w-[100%] h-[100%] flex justify-center">
-            <textarea className='w-[100%] h-[100%] outline-none rounded-md pl-2 pt-1 text-black text-[12px] border-4 focus:border-4 focus:border-black' rows={2} name="" id="" onChange={(e)=>{
+            <textarea className='w-[100%] h-[100%] outline-none rounded-md pl-2 pt-1 text-black text-[12px] border-4 focus:border-4 focus:border-black' rows={2} name="" id="" onChange={(e) => {
               setInput(e.target.value)
             }} placeholder='Enter Your Content'></textarea>
           </div>
@@ -144,7 +143,7 @@ export default function Input() {
               </CldUploadWidget>
             </div>
             <div className="text-black font-serif text-[15px]">
-              <button id='Input' onClick={PostUploadImage} className='w-[100px] h-[30px] rounded-md bg-purple-600 text-white'>
+              <button onClick={PostUploadImage} className='w-[100px] h-[30px] rounded-md bg-purple-600 text-white'>
                 post
               </button>
             </div>
