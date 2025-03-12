@@ -5,7 +5,7 @@ export default async function page() {
 
   let data = null;
   try {
-    const result = await fetch("https://my-social-app-psi.vercel.app/api/post/postapi", {
+    const result = await fetch("https://my-social-app-psi.vercel.app/api/post/all", {
       method: "POST",
       cache: "no-store",
     })
