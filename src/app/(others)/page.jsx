@@ -5,7 +5,7 @@ import { IoMdShareAlt } from "react-icons/io";
 import { AiFillLike } from "react-icons/ai";
 import "../(others)/style/page.css"
 
-export default async function page() {
+export default async function page() { 
 
   let data = null;
   try {

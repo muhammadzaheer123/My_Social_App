@@ -143,8 +143,11 @@ export default function Input() {
               </CldUploadWidget>
             </div>
             <div className="text-black font-serif text-[15px]">
-              <button onClick={PostUploadImage} className='w-[100px] h-[30px] rounded-md bg-purple-600 text-white'>
-                post
+              <button className='w-[100px] h-[30px] rounded-md bg-purple-600 text-white'
+                onClick={PostUploadImage}
+                disabled={Input.trim() === "" || PostLoading}
+              >
+                {PostLoading ? "Posting..." : "Post"}
               </button>
             </div>
           </div>
